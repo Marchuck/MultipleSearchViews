@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MultipleSearchViews</string>
+    <string name="search">Search animals...</string>
+</resources>

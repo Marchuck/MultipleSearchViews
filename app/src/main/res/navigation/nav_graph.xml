@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@+id/intro_fragment"
+            android:id="@+id/nav_graph">
+
+
+    <fragment android:id="@+id/intro_fragment"
+              tools:layout="@layout/intro_fragment">
+
+        <action
+                app:destination="@+id/dogs_fragment"
+
+                android:id="@+id/navigate_to_dogs">
+
+            <argument
+                    android:name="search_query"
+                    android:defaultValue="''"
+                    app:argType="string"
+                    app:nullable="false"/>
+
+        </action>
+
+        <action
+                app:destination="@+id/cats_fragment"
+                android:id="@+id/navigate_to_cats">
+
+            <argument
+                    android:name="search_query"
+                    android:defaultValue="''"
+                    app:argType="string"
+                    app:nullable="false"/>
+
+        </action>
+
+    </fragment>
+
+    <fragment android:id="@+id/dogs_fragment"
+              tools:layout="@layout/dogs_fragment">
+
+        <deepLink app:uri="/dogs/{search_query}"/>
+
+    </fragment>
+
+    <fragment android:id="@+id/cats_fragment"
+              tools:layout="@layout/cats_fragment">
+
+        <deepLink app:uri="/cats/{search_query}"/>
+
+    </fragment>
+
+
+</navigation>
