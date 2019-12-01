@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MultipleSearchViews</string>
-    <string name="search">Search animals...</string>
+    <string name="search">Search…</string>
+    <string name="elves">Elves</string>
+    <string name="hobbits">Hobbits</string>
+    <string name="intro_label">Lord Of The Rings characters</string>
 </resources>

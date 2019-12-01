@@ -1,53 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-            app:startDestination="@+id/intro_fragment"
-            android:id="@+id/nav_graph">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_graph"
+        app:startDestination="@+id/intro_fragment">
 
-
-    <fragment android:id="@+id/intro_fragment"
-              tools:layout="@layout/intro_fragment">
+    <fragment
+            android:id="@+id/intro_fragment"
+            android:name="pl.marchuck.multiplesearchviews.intro.IntroFragment"
+            android:label="@string/intro_label"
+            tools:layout="@layout/intro_fragment">
 
         <action
-                app:destination="@+id/dogs_fragment"
-
-                android:id="@+id/navigate_to_dogs">
+                android:id="@+id/navigate_to_hobbits"
+                app:destination="@+id/hobbits_fragment">
 
             <argument
                     android:name="search_query"
-                    android:defaultValue="''"
+                    android:defaultValue=""
                     app:argType="string"
-                    app:nullable="false"/>
-
+                    app:nullable="false" />
         </action>
 
         <action
-                app:destination="@+id/cats_fragment"
-                android:id="@+id/navigate_to_cats">
+                android:id="@+id/navigate_to_elves"
+                app:destination="@+id/elves_fragment">
 
             <argument
                     android:name="search_query"
-                    android:defaultValue="''"
+                    android:defaultValue=""
                     app:argType="string"
-                    app:nullable="false"/>
-
+                    app:nullable="false" />
         </action>
 
     </fragment>
 
-    <fragment android:id="@+id/dogs_fragment"
-              tools:layout="@layout/dogs_fragment">
+    <fragment
+            android:id="@+id/hobbits_fragment"
+            android:name="pl.marchuck.multiplesearchviews.hobbits.HobbitsFragment"
+            android:label="@string/hobbits"
+            tools:layout="@layout/hobbits_fragment">
 
-        <deepLink app:uri="/dogs/{search_query}"/>
+        <argument
+                android:name="search_query"
+                android:defaultValue=""
+                app:argType="string"
+                app:nullable="false" />
+
+        <deepLink app:uri="lotr://hobbits/{search_query}" />
 
     </fragment>
 
-    <fragment android:id="@+id/cats_fragment"
-              tools:layout="@layout/cats_fragment">
+    <fragment
+            android:id="@+id/elves_fragment"
+            android:name="pl.marchuck.multiplesearchviews.elves.ElvesFragment"
+            android:label="@string/elves"
+            tools:layout="@layout/elves_fragment">
+        <argument
+                android:name="search_query"
+                android:defaultValue=""
+                app:argType="string"
+                app:nullable="false" />
 
-        <deepLink app:uri="/cats/{search_query}"/>
+        <deepLink app:uri="lotr://elves/{search_query}" />
 
     </fragment>
-
 
 </navigation>

@@ -3,4 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="introColor">#5C6BC0</color>
+    <color name="elvesColor">#E7E752</color>
+    <color name="hobbitsColor">#F06262</color>
 </resources>
