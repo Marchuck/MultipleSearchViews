@@ -12,5 +12,4 @@ class ElvesViewModel(private val dataSource: CharactersDataSource) : ViewModel()
     fun queryDataSet(query: String) {
         results.value = dataSource.filter("Elf", query)
     }
-
 }

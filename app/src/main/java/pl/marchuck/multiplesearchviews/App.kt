@@ -8,8 +8,4 @@ class App : Application() {
 
     val dataSource: CharactersDataSource by lazy { LotrCharactersDataSource(resources) }
 
-    override fun onCreate() {
-        super.onCreate()
-
-    }
 }

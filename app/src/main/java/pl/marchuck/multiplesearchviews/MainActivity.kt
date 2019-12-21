@@ -6,9 +6,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import pl.marchuck.multiplesearchviews.base.SEARCHABLE_DESTINATION
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainViewModelOwner {
 
-    lateinit var mainViewModel: MainViewModel
+    override lateinit var mainViewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

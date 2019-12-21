@@ -15,8 +15,6 @@ class ElvesFragment : BaseFragment(R.layout.elves_fragment) {
 
     private lateinit var viewModel: ElvesViewModel
 
-    val args: ElvesFragmentArgs by navArgs()
-
     val elvesAdapter = CharactersAdapter()
 
     val listener: SearchView.OnQueryTextListener = object : SearchView.OnQueryTextListener {
@@ -36,9 +34,7 @@ class ElvesFragment : BaseFragment(R.layout.elves_fragment) {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel = ElvesViewModel(
-            provideApp().dataSource
-        )
+        viewModel = ElvesViewModel(provideApp().dataSource)
 
         viewModel.results.observe(viewLifecycleOwner, Observer {
             elvesAdapter.submitList(it)
@@ -54,11 +50,6 @@ class ElvesFragment : BaseFragment(R.layout.elves_fragment) {
         with(elves_search) {
             configureSearchableInfo(SearchDestination.ELVES)
             setOnQueryTextListener(listener)
-
-            if (args.searchQuery.isNotEmpty()) {
-                setQuery(args.searchQuery, false)
-                requestFocus()
-            }
         }
     }
 }
